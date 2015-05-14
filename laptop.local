@@ -24,6 +24,7 @@ brew cask install atext
 brew cask install choosy
 brew cask install lastpass
 brew cask install fluid
+brew cask install screenhero
 
 brew_install_or_upgrade dockutil
 dockutil --remove all
