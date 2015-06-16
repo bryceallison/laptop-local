@@ -9,16 +9,17 @@ mkdir -p ~/.nvm
 # nvm install iojs
 # nvm alias default stable
 
-brew cask install java
 
 brew_install_or_upgrade 'mongo'
 brew_launchctl_restart 'mongodb'
 
-brew_install_or_upgrade 'elasticsearch'
-# brew_launchctl_restart 'elasticsearch'
 
 brew_tap 'caskroom/cask'
 brew_install_or_upgrade 'brew-cask'
+
+brew cask install java
+brew_install_or_upgrade 'elasticsearch'
+# brew_launchctl_restart 'elasticsearch'
 
 brew cask install dropbox
 brew cask install google-chrome
@@ -38,6 +39,8 @@ brew cask install fluid
 brew cask install screenhero
 brew cask install iterm2
 brew cask install sonos
+brew cask install sizeup
+# brew cask install sketch-tool
 
 brew_install_or_upgrade dockutil
 dockutil --remove all
