@@ -1,10 +1,21 @@
 #!/bin/sh
 
+echo "Installing Laptop Local"
+
+brew_install_or_upgrade nvm
+mkdir -p ~/.nvm
+# nvm install 0.10
+# nvm install stable
+# nvm install iojs
+# nvm alias default stable
+
+brew cask install java
+
 brew_install_or_upgrade 'mongo'
 brew_launchctl_restart 'mongodb'
 
 brew_install_or_upgrade 'elasticsearch'
-brew_launchctl_restart 'elasticsearch'
+# brew_launchctl_restart 'elasticsearch'
 
 brew_tap 'caskroom/cask'
 brew_install_or_upgrade 'brew-cask'
@@ -25,6 +36,15 @@ brew cask install choosy
 brew cask install lastpass
 brew cask install fluid
 brew cask install screenhero
+brew cask install iterm2
+brew cask install sonos
 
 brew_install_or_upgrade dockutil
 dockutil --remove all
+dockutil --add '~/Downloads' --view fan --display folder --sort dateadded --section others --allhomes
+dockutil --add '~/Screenshots' --view fan --display folder --sort dateadded --section others --allhomes
+
+
+# set screenshot location
+mkdir -p ~/Screenshots
+defaults write com.apple.screencapture location ~/Screenshots
